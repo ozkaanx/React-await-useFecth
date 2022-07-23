@@ -1,0 +1,13 @@
+.list-box{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  &-item{
+    min-height: 40px;
+    border: 1px solid rgb(194, 194, 194);
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+  }
+}
