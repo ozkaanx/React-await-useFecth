@@ -9,9 +9,7 @@ export default function App() {
   useEffect(() => {
     (async () => {
       const response = await fetchData();
-      if (response) {
-        setIsdata(response);
-      }
+      response && setIsdata(response)
     })();
   }, []);
 
