@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchCharData } from "./utils/request";
+import { fetchData } from "./utils/request";
 
 function Detail() {
   let { charId } = useParams();
@@ -8,13 +8,10 @@ function Detail() {
 
   useEffect(() => {
     (async () => {
-      debugger;
-      const response = await fetchCharData(charId);
-      if (response) {
-        setCharDetail(response);
-      }
+      const response = await fetchData(charId);
+      response && setCharDetail(response);
     })();
-  }, []);
+  }, [charId]);
 
   return (
     <div>
